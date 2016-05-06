@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NPU-HX-l18">
+                                <rect key="frame" x="244" y="104" width="113" height="45"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                                <state key="normal" title="Calculate">
+                                    <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cus-rI-bj9">
+                                <rect key="frame" x="18" y="66" width="564" height="31"/>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="% Alcohol Content per Beer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVN-lm-1yS">
+                                <rect key="frame" x="20" y="28" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zf4-6H-RRf">
+                                <rect key="frame" x="35" y="157" width="530" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Cus-rI-bj9" firstAttribute="centerX" secondItem="hVN-lm-1yS" secondAttribute="centerX" id="2ya-fh-3ZT"/>
+                            <constraint firstItem="NPU-HX-l18" firstAttribute="centerX" secondItem="Cus-rI-bj9" secondAttribute="centerX" id="6jW-gs-bZ5"/>
+                            <constraint firstItem="zf4-6H-RRf" firstAttribute="width" secondItem="NPU-HX-l18" secondAttribute="width" id="7ky-pw-m2p"/>
+                            <constraint firstItem="zf4-6H-RRf" firstAttribute="top" secondItem="NPU-HX-l18" secondAttribute="bottom" constant="8" id="7lc-ur-p0b"/>
+                            <constraint firstItem="NPU-HX-l18" firstAttribute="top" secondItem="Cus-rI-bj9" secondAttribute="bottom" constant="8" id="Bhk-YR-gch"/>
+                            <constraint firstItem="Cus-rI-bj9" firstAttribute="height" secondItem="hVN-lm-1yS" secondAttribute="height" id="CVC-3p-oBc"/>
+                            <constraint firstItem="hVN-lm-1yS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="DZn-qJ-q2t"/>
+                            <constraint firstItem="Cus-rI-bj9" firstAttribute="top" secondItem="hVN-lm-1yS" secondAttribute="bottom" constant="8" id="Fh0-Ie-LPR"/>
+                            <constraint firstItem="Cus-rI-bj9" firstAttribute="width" secondItem="hVN-lm-1yS" secondAttribute="width" id="OfW-Bi-hc7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zf4-6H-RRf" secondAttribute="trailing" constant="15" id="Ucd-kx-BeO"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hVN-lm-1yS" secondAttribute="leading" id="f4g-Aq-ivg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hVN-lm-1yS" secondAttribute="trailing" id="pS1-wJ-2gX"/>
+                            <constraint firstItem="zf4-6H-RRf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="y5b-28-qKH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="CVC-3p-oBc"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="c78-VK-oJh" appends="YES" id="RgE-LI-zwN"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="c78-VK-oJh"/>
             </objects>
+            <point key="canvasLocation" x="375" y="337"/>
         </scene>
     </scenes>
 </document>
