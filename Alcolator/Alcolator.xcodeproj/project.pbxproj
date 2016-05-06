@@ -207,6 +207,7 @@
 				TargetAttributes = {
 					19FA5C951CDD3DCA00B5D5DB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = YUYDGGZ6SW;
 					};
 					19FA5CAE1CDD3DCA00B5D5DB = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -415,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Alcolator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinthrailkill.Alcolator;
@@ -426,6 +428,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Alcolator/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kevinthrailkill.Alcolator;
