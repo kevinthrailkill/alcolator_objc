@@ -11,6 +11,8 @@
 @interface ViewController ()
 
 
+
+
 @end
 
 @implementation ViewController
@@ -41,15 +43,15 @@
     NSLog(@"Slider value changed to %f", sender.value);
     
     
+    
+    
     //resignFirstResponder is used in this case to dismiss keyboard
     [self.beerPercentTextField resignFirstResponder];
+    
+    [self updateResults];
 }
 
-- (IBAction)buttonPressed:(UIButton *)sender {
-    
-    //resignFirstResponder is used in this case to dismiss keyboard
-    [self.beerPercentTextField resignFirstResponder];
-    
+- (void) updateResults {
     
     // first, calculate how much alcohol is in all those beers...
     int numberOfBeers = self.beerCountSlider.value;
@@ -75,9 +77,25 @@
     } else {
         wineText = NSLocalizedString(@"glasses", @"plural of glass");
     }
+    
+    
+    NSString *navBarText = [NSString stringWithFormat:NSLocalizedString(@"Wine (%.1f %@)", nil), numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
+    
+    self.navigationItem.title = navBarText;
+    
     // generate the result text, and display it on the label
     NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ (with %.2f%% alcohol) contains as much alcohol as %.1f %@ of wine.", nil), numberOfBeers, beerText,  [self.beerPercentTextField.text floatValue], numberOfWineGlassesForEquivalentAlcoholAmount, wineText];
     self.resultLabel.text = resultText;
+
+}
+
+- (IBAction)buttonPressed:(UIButton *)sender {
+    
+    //resignFirstResponder is used in this case to dismiss keyboard
+    [self.beerPercentTextField resignFirstResponder];
+    
+    [self updateResults];
+    
     
 }
 
